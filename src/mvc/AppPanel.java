@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package stoplightSim;
+package mvc;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -19,34 +19,27 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-import tools.Utilities;
 
 public class AppPanel extends JPanel implements ActionListener {
-    private Stoplight light = new Stoplight();
-    private final ControlPanel controls;
-    private final StoplightView view;
+    private Model model;
+    public ControlPanel controls = new ControlPanel();
+    private final View view;
+    private AppFactory factory;
 
-    public AppPanel() {
-        this.view = new StoplightView(this.light);
-        this.controls = new ControlPanel();
+    public AppPanel(AppFactory newFactory) {
+        this.factory = newFactory;
+        this.model = this.factory.makeModel();
+        this.view = this.factory.makeView(this.model);
         this.setLayout(new GridLayout(1, 3));
         this.add(this.controls);
         this.add(this.view);
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(3);
-        Container cp = frame.getContentPane();
-        cp.add(this);
-        frame.setJMenuBar(this.createMenuBar());
-        frame.setTitle("Stoplight Simulator");
-        frame.setSize(500, 300);
-        frame.setVisible(true);
     }
 
     protected JMenuBar createMenuBar() {
         JMenuBar result = new JMenuBar();
         JMenu fileMenu = Utilities.makeMenu("File", new String[]{"New", "Save", "Open", "Quit"}, this);
         result.add(fileMenu);
-        JMenu editMenu = Utilities.makeMenu("Edit", new String[]{"Change"}, this);
+        JMenu editMenu = Utilities.makeMenu("Edit", this.factory.getEditCommands(), this);
         result.add(editMenu);
         JMenu helpMenu = Utilities.makeMenu("Help", new String[]{"About", "Help"}, this);
         result.add(helpMenu);
@@ -59,40 +52,37 @@ public class AppPanel extends JPanel implements ActionListener {
         try {
             String fName;
             switch (cmd) {
-                case "Change":
-                    this.light.change();
-                    break;
                 case "Save":
                     fName = Utilities.getFileName((String)null, false);
                     ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
-                    os.writeObject(this.light);
+                    os.writeObject(this.model);
                     os.close();
                     break;
                 case "Open":
                     if (Utilities.confirm("Are you sure? Unsaved changes will be lost!")) {
                         fName = Utilities.getFileName((String)null, true);
                         ObjectInputStream is = new ObjectInputStream(new FileInputStream(fName));
-                        this.light = (Stoplight)is.readObject();
-                        this.view.setLight(this.light);
+                        this.model = (Model)is.readObject();
+                        this.view.setModel(this.model);
                         is.close();
                     }
                     break;
+                case "About":
+                    Utilities.inform(this.factory.about());
+                    break;
+                case "Help":
+                    Utilities.inform(this.factory.getHelp());
+                    break;
                 case "New":
-                    this.light = new Stoplight();
-                    this.view.setLight(this.light);
+                    this.model = this.factory.makeModel();
+                    this.view.setModel(this.model);
                     break;
                 case "Quit":
                     System.exit(0);
                     break;
-                case "About":
-                    Utilities.inform("Cyberdellic Designs Stoplight Simulator, 2024. All rights reserved.");
-                    break;
-                case "Help":
-                    String[] cmds = new String[]{"Change: Changes stop light"};
-                    Utilities.inform(cmds);
-                    break;
                 default:
-                    throw new Exception("Unrecognized command: " + cmd);
+                    Command c = this.factory.makeEditCommand(this.model, cmd, e.getSource());
+                    c.execute();
             }
         } catch (Exception var7) {
             Utilities.error(var7);
@@ -100,18 +90,28 @@ public class AppPanel extends JPanel implements ActionListener {
 
     }
 
-    public static void main(String[] args) {
-        new AppPanel();
+    public void display() {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(3);
+        Container cp = frame.getContentPane();
+        cp.add(this);
+        frame.setJMenuBar(this.createMenuBar());
+        frame.setTitle(this.factory.getTitle());
+        frame.setSize(500, 300);
+        frame.setVisible(true);
     }
 
-    class ControlPanel extends JPanel {
+    public class ControlPanel extends JPanel {
+        public JPanel buttons;
+
         public ControlPanel() {
             this.setBackground(Color.PINK);
-            JPanel p = new JPanel();
-            JButton change = new JButton("Change");
-            change.addActionListener(AppPanel.this);
-            p.add(change);
-            this.add(p);
+            this.buttons = new JPanel();
+        }
+
+        public void add(JButton newButtons) {
+            this.buttons.add(newButtons);
+            this.add(this.buttons);
         }
     }
 }
