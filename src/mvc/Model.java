@@ -15,6 +15,6 @@ public class Model extends Publisher implements Serializable
     public void changed()
     {
         unsavedChanges = true;
-        // fires a property change event (I don't know what this means)
+        notifySubscribers();
     }
 }
