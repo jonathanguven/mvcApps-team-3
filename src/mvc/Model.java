@@ -1,20 +1,37 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package mvc;
 
 import java.io.Serializable;
 
-public class Model extends Publisher implements Serializable
-{
-    private Boolean unsavedChanges;
-    private String fileName;
-    public Model()
-    {
-        unsavedChanges = false;
-        fileName = null;
+public class Model extends Publisher implements Serializable {
+    private Boolean unsavedChanges = false;
+    private String fileName = null;
+
+    public Model() {
     }
 
-    public void changed()
-    {
-        unsavedChanges = true;
-        notifySubscribers();
+    public void changed() {
+        this.unsavedChanges = true;
+        this.notifySubscribers();
+    }
+
+    public boolean getUnsavedChanges() {
+        return this.unsavedChanges;
+    }
+
+    public String getFileName() {
+        return this.fileName;
+    }
+
+    public void setFileName(String fName) {
+        this.fileName = fName;
+    }
+
+    public void setUnsavedChanges(boolean b) {
+        this.unsavedChanges = b;
     }
 }
