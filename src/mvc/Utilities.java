@@ -5,81 +5,92 @@
 
 package mvc;
 
-import java.awt.Component;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.Random;
-import javax.swing.JFileChooser;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 
-public class Utilities {
+public class Utilities
+{
     public static Random rng = new Random(System.currentTimeMillis());
     private static int nextID = 100;
 
-    public Utilities() {
+    public Utilities()
+    {
     }
 
-    public static boolean confirm(String query) {
-        int result = JOptionPane.showConfirmDialog((Component)null, query, "choose one", 0);
+    public static boolean confirm(String query)
+    {
+        int result = JOptionPane.showConfirmDialog(null, query, "choose one", 0);
         return result == 0;
     }
 
-    public static String ask(String query) {
-        return JOptionPane.showInputDialog((Component)null, query);
+    public static String ask(String query)
+    {
+        return JOptionPane.showInputDialog(null, query);
     }
 
-    public static void inform(String info) {
-        JOptionPane.showMessageDialog((Component)null, info);
+    public static void inform(String info)
+    {
+        JOptionPane.showMessageDialog(null, info);
     }
 
-    public static void inform(String[] items) {
+    public static void inform(String[] items)
+    {
         String helpString = "";
 
-        for(int i = 0; i < items.length; ++i) {
+        for (int i = 0; i < items.length; ++i)
+        {
             helpString = helpString + "\n" + items[i];
         }
 
         inform(helpString);
     }
 
-    public static void error(String gripe) {
-        JOptionPane.showMessageDialog((Component)null, gripe, "OOPS!", 0);
+    public static void error(String gripe)
+    {
+        JOptionPane.showMessageDialog(null, gripe, "OOPS!", 0);
     }
 
-    public static void error(Exception gripe) {
+    public static void error(Exception gripe)
+    {
         gripe.printStackTrace();
-        JOptionPane.showMessageDialog((Component)null, gripe.getMessage(), "OOPS!", 0);
+        JOptionPane.showMessageDialog(null, gripe.getMessage(), "OOPS!", 0);
     }
 
-    public static void saveChanges(Model model) {
-        if (model.getUnsavedChanges() && confirm("current model has unsaved changes, continue?")) {
+    public static void saveChanges(Model model)
+    {
+        if (model.getUnsavedChanges() && confirm("current model has unsaved changes, continue?"))
+        {
             save(model, false);
         }
 
     }
 
-    public static String getFileName(String fName, Boolean open) {
+    public static String getFileName(String fName, Boolean open)
+    {
         JFileChooser chooser = new JFileChooser();
         String result = null;
-        if (fName != null) {
+        if (fName != null)
+        {
             chooser.setCurrentDirectory(new File(fName));
         }
 
         int returnVal;
-        if (open) {
-            returnVal = chooser.showOpenDialog((Component)null);
-            if (returnVal == 0) {
+        if (open)
+        {
+            returnVal = chooser.showOpenDialog(null);
+            if (returnVal == 0)
+            {
                 result = chooser.getSelectedFile().getPath();
             }
-        } else {
-            returnVal = chooser.showSaveDialog((Component)null);
-            if (returnVal == 0) {
+        }
+        else
+        {
+            returnVal = chooser.showSaveDialog(null);
+            if (returnVal == 0)
+            {
                 result = chooser.getSelectedFile().getPath();
             }
         }
@@ -87,45 +98,54 @@ public class Utilities {
         return result;
     }
 
-    public static void save(Model model, Boolean saveAs) {
+    public static void save(Model model, Boolean saveAs)
+    {
         String fName = model.getFileName();
-        if (fName == null || saveAs) {
+        if (fName == null || saveAs)
+        {
             fName = getFileName(fName, false);
             model.setFileName(fName);
         }
 
-        try {
+        try
+        {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
             model.setUnsavedChanges(false);
             os.writeObject(model);
             os.close();
-        } catch (Exception var4) {
+        } catch (Exception var4)
+        {
             model.setUnsavedChanges(true);
             error(var4);
         }
 
     }
 
-    public static Model open(Model model) {
+    public static Model open(Model model)
+    {
         saveChanges(model);
         String fName = getFileName(model.getFileName(), true);
         Model newModel = null;
 
-        try {
+        try
+        {
             ObjectInputStream is = new ObjectInputStream(new FileInputStream(fName));
-            newModel = (Model)is.readObject();
+            newModel = (Model) is.readObject();
             is.close();
-        } catch (Exception var4) {
+        } catch (Exception var4)
+        {
             error(var4);
         }
 
         return newModel;
     }
 
-    public static JMenu makeMenu(String name, String[] items, ActionListener handler) {
+    public static JMenu makeMenu(String name, String[] items, ActionListener handler)
+    {
         JMenu result = new JMenu(name);
 
-        for(int i = 0; i < items.length; ++i) {
+        for (int i = 0; i < items.length; ++i)
+        {
             JMenuItem item = new JMenuItem(items[i]);
             item.addActionListener(handler);
             result.add(item);
@@ -134,11 +154,13 @@ public class Utilities {
         return result;
     }
 
-    public static void log(String msg) {
+    public static void log(String msg)
+    {
         System.out.println(msg);
     }
 
-    public static int getID() {
+    public static int getID()
+    {
         return nextID++;
     }
 }

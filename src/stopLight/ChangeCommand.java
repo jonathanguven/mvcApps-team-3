@@ -1,15 +1,19 @@
 package stopLight;
 
-import mvc.*;
+import mvc.Command;
+import mvc.Model;
 
-public class ChangeCommand extends Command {
+public class ChangeCommand extends Command
+{
 
-    public ChangeCommand(Model model) {
+    public ChangeCommand(Model model)
+    {
         super(model);
     }
 
-    public void execute() {
-        Stoplight light = (Stoplight)model;
+    public void execute()
+    {
+        Stoplight light = (Stoplight) model;
         light.change();
     }
 

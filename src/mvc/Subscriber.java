@@ -1,6 +1,7 @@
 package mvc;
 
-public interface Subscriber {
-    public void update();
+public interface Subscriber
+{
+    void update();
 }
 
