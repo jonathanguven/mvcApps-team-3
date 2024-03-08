@@ -4,7 +4,10 @@ import java.awt.*;
 import javax.swing.*;
 
 import mvc.*;
+/*
+    Name: John Huynh
 
+ */
 
 public class StoplightPanel extends AppPanel {
     private JButton change;
