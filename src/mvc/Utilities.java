@@ -1,137 +1,144 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package mvc;
 
-import javax.swing.*;
+import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Random;
+import javax.swing.JFileChooser;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 public class Utilities {
+    public static Random rng = new Random(System.currentTimeMillis());
+    private static int nextID = 100;
 
-    // asks user a yes/no question
+    public Utilities() {
+    }
+
     public static boolean confirm(String query) {
-        int result = JOptionPane.showConfirmDialog(null,
-                query, "choose one", JOptionPane.YES_NO_OPTION);
+        int result = JOptionPane.showConfirmDialog((Component)null, query, "choose one", 0);
         return result == 0;
     }
 
-    // asks user for info
     public static String ask(String query) {
-        return JOptionPane.showInputDialog(null, query);
+        return JOptionPane.showInputDialog((Component)null, query);
     }
 
-    // tells user some info
     public static void inform(String info) {
-        JOptionPane.showMessageDialog(null,info);
+        JOptionPane.showMessageDialog((Component)null, info);
     }
 
-    // tells user a lot of info
     public static void inform(String[] items) {
         String helpString = "";
-        for(int i = 0; i < items.length; i++) {
+
+        for(int i = 0; i < items.length; ++i) {
             helpString = helpString + "\n" + items[i];
         }
+
         inform(helpString);
     }
 
-    // tells user about an error
     public static void error(String gripe) {
-        JOptionPane.showMessageDialog(null,
-                gripe,
-                "OOPS!",
-                JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog((Component)null, gripe, "OOPS!", 0);
     }
 
-    // tells user about an exception
     public static void error(Exception gripe) {
         gripe.printStackTrace();
-        JOptionPane.showMessageDialog(null,
-                gripe.getMessage(),
-                "OOPS!",
-                JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog((Component)null, gripe.getMessage(), "OOPS!", 0);
     }
 
-    // asks user to save changes
-   /* public static void saveChanges(Model model) {
-        if (model.getUnsavedChanges() && Utilities.confirm("current model has unsaved changes, continue?"))
-            Utilities.save(model, false);
-    }*/
+    public static void saveChanges(Model model) {
+        if (model.getUnsavedChanges() && confirm("current model has unsaved changes, continue?")) {
+            save(model, false);
+        }
 
-    // asks user for a file name
+    }
+
     public static String getFileName(String fName, Boolean open) {
         JFileChooser chooser = new JFileChooser();
         String result = null;
         if (fName != null) {
-            // open chooser in directory of fName
             chooser.setCurrentDirectory(new File(fName));
         }
+
+        int returnVal;
         if (open) {
-            int returnVal = chooser.showOpenDialog(null);
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
-                result= chooser.getSelectedFile().getPath();
+            returnVal = chooser.showOpenDialog((Component)null);
+            if (returnVal == 0) {
+                result = chooser.getSelectedFile().getPath();
             }
         } else {
-            int returnVal = chooser.showSaveDialog(null);
-            if(returnVal == JFileChooser.APPROVE_OPTION) {
-                result= chooser.getSelectedFile().getPath();
+            returnVal = chooser.showSaveDialog((Component)null);
+            if (returnVal == 0) {
+                result = chooser.getSelectedFile().getPath();
             }
         }
+
         return result;
     }
 
-    // save model
-/*    public static void save(Model model, Boolean saveAs) {
+    public static void save(Model model, Boolean saveAs) {
         String fName = model.getFileName();
         if (fName == null || saveAs) {
             fName = getFileName(fName, false);
             model.setFileName(fName);
         }
+
         try {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
             model.setUnsavedChanges(false);
             os.writeObject(model);
             os.close();
-        } catch (Exception err) {
+        } catch (Exception var4) {
             model.setUnsavedChanges(true);
-            Utilities.error(err);
+            error(var4);
         }
+
     }
 
-    // open model
     public static Model open(Model model) {
         saveChanges(model);
         String fName = getFileName(model.getFileName(), true);
         Model newModel = null;
+
         try {
             ObjectInputStream is = new ObjectInputStream(new FileInputStream(fName));
             newModel = (Model)is.readObject();
             is.close();
-        } catch (Exception err) {
-            Utilities.error(err);
+        } catch (Exception var4) {
+            error(var4);
         }
-        return newModel;
-    }*/
 
-    // simple menu maker
+        return newModel;
+    }
+
     public static JMenu makeMenu(String name, String[] items, ActionListener handler) {
         JMenu result = new JMenu(name);
-        for(int i = 0; i < items.length; i++) {
+
+        for(int i = 0; i < items.length; ++i) {
             JMenuItem item = new JMenuItem(items[i]);
             item.addActionListener(handler);
             result.add(item);
         }
+
         return result;
     }
 
-    // random number generator
-    public static Random rng = new Random(System.currentTimeMillis());
-
     public static void log(String msg) {
-        System.out.println(msg); // for now
+        System.out.println(msg);
     }
 
-    private static int nextID = 100;
     public static int getID() {
         return nextID++;
     }
-
 }
