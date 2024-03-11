@@ -1,30 +1,48 @@
 package mvc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
 
-public class AppPanel extends JPanel implements ActionListener {
-    private final View view;
-    private final AppFactory factory;
-    public ControlPanel controls = new ControlPanel();
+public class AppPanel extends JPanel implements Subscriber, ActionListener {
     private Model model;
+    public JPanel controls;
+    private final View view;
+    private AppFactory factory;
+    private JFrame frame;
+    public static int FRAME_WIDTH = 500;
+    public static int FRAME_HEIGHT = 300;
 
-    public AppPanel (AppFactory newFactory) {
+    public AppPanel(AppFactory newFactory) {
         this.factory = newFactory;
-        this.model = this.factory.makeModel();
-        this.view = this.factory.makeView(this.model);
-        this.setLayout(new GridLayout(1, 3));
-        this.add(this.controls);
-        this.add(this.view);
+        controls = new ControlPanel();
+        model = factory.makeModel();
+        view = factory.makeView(model);
+        setLayout(new GridLayout(1, 3));
+        add(controls);
+        add(view);
+        model.subscribe(this);
+
+        frame = new SafeFrame();
+        Container cp = frame.getContentPane();
+        cp.add(this);
+        frame.setJMenuBar(createMenuBar());
+        frame.setTitle(factory.getTitle());
+        frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
     }
 
-    protected JMenuBar createMenuBar () {
+    protected JMenuBar createMenuBar() {
         JMenuBar result = new JMenuBar();
         JMenu fileMenu = Utilities.makeMenu("File", new String[]{"New", "Save", "Open", "Quit"}, this);
         result.add(fileMenu);
@@ -35,26 +53,17 @@ public class AppPanel extends JPanel implements ActionListener {
         return result;
     }
 
-    public void actionPerformed (ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
 
         try {
-            String fName;
             switch (cmd) {
                 case "Save":
-                    fName = Utilities.getFileName(null, false);
-                    ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
-                    os.writeObject(this.model);
-                    os.close();
+                    Utilities.save(model, false);
                     break;
                 case "Open":
-                    if (Utilities.confirm("Are you sure? Unsaved changes will be lost!")) {
-                        fName = Utilities.getFileName(null, true);
-                        ObjectInputStream is = new ObjectInputStream(new FileInputStream(fName));
-                        this.model = (Model) is.readObject();
-                        this.view.setModel(this.model);
-                        is.close();
-                    }
+                    Model newModel = Utilities.open(model);
+                    if (newModel != null) setModel(newModel);
                     break;
                 case "About":
                     Utilities.inform(this.factory.about());
@@ -63,10 +72,12 @@ public class AppPanel extends JPanel implements ActionListener {
                     Utilities.inform(this.factory.getHelp());
                     break;
                 case "New":
-                    this.model = this.factory.makeModel();
-                    this.view.setModel(this.model);
+                    Utilities.saveChanges(model);
+                    setModel(factory.makeModel());
+                    model.setUnsavedChanges(false);
                     break;
                 case "Quit":
+                    Utilities.saveChanges(model);
                     System.exit(0);
                     break;
                 default:
@@ -79,25 +90,39 @@ public class AppPanel extends JPanel implements ActionListener {
 
     }
 
-    public void display () {
-        SafeFrame frame = new SafeFrame();
-        Container cp = frame.getContentPane();
-        cp.add(this);
-        frame.setJMenuBar(this.createMenuBar());
-        frame.setTitle(this.factory.getTitle());
-        frame.setSize(500, 300);
+    public void display() {
+//        JFrame frame = new JFrame();
+//        frame.setDefaultCloseOperation(3);
+//        Container cp = frame.getContentPane();
+//        cp.add(this);
+//        frame.setJMenuBar(this.createMenuBar());
+//        frame.setTitle(this.factory.getTitle());
+//        frame.setSize(500, 300);
+//        frame.setVisible(true);
         frame.setVisible(true);
+    }
+
+    public void update() {
+
+    }
+
+    public void setModel(Model newModel) {
+        this.model.unsubscribe(this);
+        this.model = newModel;
+        this.model.subscribe(this);
+        view.setModel(this.model);
+        model.changed();
     }
 
     public class ControlPanel extends JPanel {
         public JPanel buttons;
 
-        public ControlPanel () {
+        public ControlPanel() {
             this.setBackground(Color.PINK);
             this.buttons = new JPanel();
         }
 
-        public void add (JButton newButtons) {
+        public void add(JButton newButtons) {
             this.buttons.add(newButtons);
             this.add(this.buttons);
         }
