@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Publisher {
-    private List<Subscriber> subscribers = new LinkedList<Subscriber>();
+    private final List<Subscriber> subscribers = new LinkedList<>();
 
-    public void subscribe(Subscriber s) { subscribers.add(s); }
+    public void subscribe (Subscriber s) {subscribers.add(s);}
 
-    public void unsubscribe(Subscriber s) { subscribers.remove(s); }
+    public void unsubscribe (Subscriber s) {subscribers.remove(s);}
 
-    public void notifySubscribers() {
+    public void notifySubscribers () {
         for (Subscriber s : subscribers) {
             s.update();
         }

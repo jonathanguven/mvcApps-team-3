@@ -5,13 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="added StopLightSim 2.0 files to stoplight package">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/AppFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Publisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/SafeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/SafeFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/Subscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Subscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -19,6 +33,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +45,12 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -42,11 +65,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.StoplightPanel.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hienc/Desktop/Main/SJSU/CS_151 - Object-Oriented Design/CA Lab/mvcApps-team-3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -54,6 +80,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Jonathan/IdeaProjects/mvcApps/src/Main.java",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -82,6 +110,14 @@
         <item itemvalue="Application.StoplightPanel" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-868cef46" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -115,6 +151,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added StopLightSim 2.0 files to stoplight package" />
