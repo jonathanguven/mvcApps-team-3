@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="added StopLightSim 2.0 files to stoplight package">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="added StopLightSim 2.0 files to stoplight package" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,7 +44,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/hienc/Desktop/Main/SJSU/CS_151 - Object-Oriented Design/CA Lab/mvcApps-team-3",
+    "last_opened_file_path": "/Users/jonathannguyen/school/SP24/CS 151/mvcApps-team-3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,6 +90,7 @@
       <updated>1709784637482</updated>
       <workItem from="1709784638626" duration="1679000" />
       <workItem from="1709878044636" duration="1239000" />
+      <workItem from="1710194877291" duration="27000" />
     </task>
     <task id="LOCAL-00001" summary="added StopLightSim 2.0 files to stoplight package">
       <option name="closed" value="true" />
