@@ -44,7 +44,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
 
     protected JMenuBar createMenuBar() {
         JMenuBar result = new JMenuBar();
-        JMenu fileMenu = Utilities.makeMenu("File", new String[]{"New", "Save", "Open", "Quit"}, this);
+        JMenu fileMenu = Utilities.makeMenu("File", new String[]{"New", "Save", "SaveAs", "Open", "Quit"}, this);
         result.add(fileMenu);
         JMenu editMenu = Utilities.makeMenu("Edit", this.factory.getEditCommands(), this);
         result.add(editMenu);
@@ -60,6 +60,9 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
             switch (cmd) {
                 case "Save":
                     Utilities.save(model, false);
+                    break;
+                case "SaveAs":
+                    Utilities.save(model, true);
                     break;
                 case "Open":
                     Model newModel = Utilities.open(model);
@@ -84,21 +87,13 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
                     Command c = this.factory.makeEditCommand(this.model, cmd, e.getSource());
                     c.execute();
             }
-        } catch (Exception var7) {
-            Utilities.error(var7);
+        } catch (Exception e) {
+            Utilities.error(e);
         }
 
     }
 
     public void display() {
-//        JFrame frame = new JFrame();
-//        frame.setDefaultCloseOperation(3);
-//        Container cp = frame.getContentPane();
-//        cp.add(this);
-//        frame.setJMenuBar(this.createMenuBar());
-//        frame.setTitle(this.factory.getTitle());
-//        frame.setSize(500, 300);
-//        frame.setVisible(true);
         frame.setVisible(true);
     }
 
@@ -121,10 +116,6 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
             this.setBackground(Color.PINK);
             this.buttons = new JPanel();
         }
-
-        public void add(JButton newButtons) {
-            this.buttons.add(newButtons);
-            this.add(this.buttons);
         }
     }
 }
