@@ -6,11 +6,10 @@ import mvc.AppPanel;
 import javax.swing.*;
 
 public class StoplightPanel extends AppPanel {
-    private final JButton change;
 
     public StoplightPanel (AppFactory factory) {
         super(factory);
-        change = new JButton("Change");
+        JButton change = new JButton("Change");
         change.addActionListener(this);
         controls.add(change);
     }

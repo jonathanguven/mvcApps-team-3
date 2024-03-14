@@ -16,7 +16,11 @@ public class GridView extends View {
     }
 
     public void update () {
-        // call update method of each CellView
+        for (int i = 0; i < cellViews.length; i++) {
+            for (int x = 0; x < cellViews[0].length; i++) {
+                cellViews[i][x].update();
+            }
+        }
     }
 
 }

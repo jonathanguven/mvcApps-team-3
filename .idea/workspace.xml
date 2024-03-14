@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="Fixed.">
-      <change afterPath="$PROJECT_DIR$/src/CALab/GridFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CALab/GridPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CALab/aaaa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CALab/aajajajaj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CALab/jjj.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CALab/sjsjjs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CALab/sjsjsjsjjss.java" afterDir="false" />
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="Added CALab.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/ClearCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/GridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/GridView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/PopulateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/PopulateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/RunCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/RunCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stopLight/ChangeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/ChangeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +183,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710368542097</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added CALab.">
+      <option name="closed" value="true" />
+      <created>1710368933913</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710368933913</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added CALab.">
+      <option name="closed" value="true" />
+      <created>1710368938784</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710368938784</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +221,8 @@
     <MESSAGE value="Changed AppPanel to use more of the Utilities class" />
     <MESSAGE value="." />
     <MESSAGE value="Fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed." />
+    <MESSAGE value="Added CALab." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added CALab." />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

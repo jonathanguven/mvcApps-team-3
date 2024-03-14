@@ -29,6 +29,7 @@ public abstract class Grid extends Model {
     protected void populate () {
         // 1. use makeCell to fill in cells
         // 2. use getNeighbors to set the neighbors field of each cell
+
     }
 
     // called when Populate button is clicked
@@ -64,11 +65,11 @@ public abstract class Grid extends Model {
     }
 
     public void interact () {
-        // ???
+
     }
 
     public void update () {
-        // ???
+        notifySubscribers();
     }
 
     public void updateLoop (int cycles) {
