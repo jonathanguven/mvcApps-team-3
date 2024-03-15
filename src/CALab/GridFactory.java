@@ -7,16 +7,17 @@ import mvc.View;
 
 public class GridFactory implements AppFactory
 {
+
     @Override
     public Model makeModel()
     {
-        return new Grid();
+        return null;
     }
 
     @Override
     public View makeView(Model m)
     {
-        return new GridView((Grid) m);
+        return null;
     }
 
     @Override

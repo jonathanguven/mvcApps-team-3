@@ -9,8 +9,10 @@ import javax.swing.*;
 
 public class GridPanel extends AppPanel
 {
-    public JButton run1;
-    public JButton run50;
+    private JButton run1;
+    private JButton run50;
+    private JButton clear;
+    private JButton populate;
 
     public GridPanel(AppFactory factory)
     {
@@ -19,8 +21,15 @@ public class GridPanel extends AppPanel
         run1.addActionListener(this);
         run50 = new JButton("Run50");
         run50.addActionListener(this);
+        clear = new JButton("Clear");
+        clear.addActionListener(this);
+        populate = new JButton("Populate");
+        populate.addActionListener(this);
+        
         controls.add(run1);
         controls.add(run50);
+        controls.add(clear);
+        controls.add(populate);
     }
 
     public static void main(String[] args)
