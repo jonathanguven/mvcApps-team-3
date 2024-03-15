@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="Added CALab.">
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="Done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/ClearCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/GridFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CALab/GridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/GridView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/PopulateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/PopulateCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CALab/RunCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/RunCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stopLight/ChangeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/ChangeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StoplightPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stopLight/StoplightFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stopLight/StoplightFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
