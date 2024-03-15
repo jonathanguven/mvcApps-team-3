@@ -1,166 +1,139 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package mvc;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.Random;
 
-public class Utilities
-{
+public class Utilities {
+
+    // random number generator
     public static Random rng = new Random(System.currentTimeMillis());
     private static int nextID = 100;
 
-    public Utilities()
-    {
-    }
-
-    public static boolean confirm(String query)
-    {
-        int result = JOptionPane.showConfirmDialog(null, query, "choose one", 0);
+    // asks user a yes/no question
+    public static boolean confirm (String query) {
+        int result = JOptionPane.showConfirmDialog(null,
+                query, "choose one", JOptionPane.YES_NO_OPTION);
         return result == 0;
     }
 
-    public static String ask(String query)
-    {
+    // asks user for info
+    public static String ask (String query) {
         return JOptionPane.showInputDialog(null, query);
     }
 
-    public static void inform(String info)
-    {
+    // tells user some info
+    public static void inform (String info) {
         JOptionPane.showMessageDialog(null, info);
     }
 
-    public static void inform(String[] items)
-    {
+    // tells user a lot of info
+    public static void inform (String[] items) {
         String helpString = "";
-
-        for (int i = 0; i < items.length; ++i)
-        {
+        for (int i = 0; i < items.length; i++) {
             helpString = helpString + "\n" + items[i];
         }
-
         inform(helpString);
     }
 
-    public static void error(String gripe)
-    {
-        JOptionPane.showMessageDialog(null, gripe, "OOPS!", 0);
+    // tells user about an error
+    public static void error (String gripe) {
+        JOptionPane.showMessageDialog(null,
+                gripe,
+                "OOPS!",
+                JOptionPane.ERROR_MESSAGE);
     }
 
-    public static void error(Exception gripe)
-    {
+    // tells user about an exception
+    public static void error (Exception gripe) {
         gripe.printStackTrace();
-        JOptionPane.showMessageDialog(null, gripe.getMessage(), "OOPS!", 0);
+        JOptionPane.showMessageDialog(null,
+                gripe.getMessage(),
+                "OOPS!",
+                JOptionPane.ERROR_MESSAGE);
     }
 
-    public static void saveChanges(Model model)
-    {
-        if (model.getUnsavedChanges() && confirm("current model has unsaved changes, continue?"))
-        {
-            save(model, false);
+    // asks user to save changes
+    public static void saveChanges (Model model) {
+        if (model.getUnsavedChanges() && Utilities.confirm("current model has unsaved changes, continue?")) {
+            Utilities.save(model, false);
         }
-
     }
 
-    public static String getFileName(String fName, Boolean open)
-    {
+    // asks user for a file name
+    public static String getFileName (String fName, Boolean open) {
         JFileChooser chooser = new JFileChooser();
         String result = null;
-        if (fName != null)
-        {
+        if (fName != null) {
+            // open chooser in directory of fName
             chooser.setCurrentDirectory(new File(fName));
         }
-
-        int returnVal;
-        if (open)
-        {
-            returnVal = chooser.showOpenDialog(null);
-            if (returnVal == 0)
-            {
+        if (open) {
+            int returnVal = chooser.showOpenDialog(null);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
                 result = chooser.getSelectedFile().getPath();
             }
         }
-        else
-        {
-            returnVal = chooser.showSaveDialog(null);
-            if (returnVal == 0)
-            {
+        else {
+            int returnVal = chooser.showSaveDialog(null);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
                 result = chooser.getSelectedFile().getPath();
             }
         }
-
         return result;
     }
 
-    public static void save(Model model, Boolean saveAs)
-    {
+    // save model
+    public static void save (Model model, Boolean saveAs) {
         String fName = model.getFileName();
-        if (fName == null || saveAs)
-        {
+        if (fName == null || saveAs) {
             fName = getFileName(fName, false);
             model.setFileName(fName);
         }
-
-        try
-        {
+        try {
             ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(fName));
             model.setUnsavedChanges(false);
             os.writeObject(model);
             os.close();
-        } catch (Exception var4)
-        {
+        } catch (Exception err) {
             model.setUnsavedChanges(true);
-            error(var4);
+            Utilities.error(err);
         }
-
     }
 
-    public static Model open(Model model)
-    {
+    // open model
+    public static Model open (Model model) {
         saveChanges(model);
         String fName = getFileName(model.getFileName(), true);
         Model newModel = null;
-
-        try
-        {
+        try {
             ObjectInputStream is = new ObjectInputStream(new FileInputStream(fName));
             newModel = (Model) is.readObject();
             is.close();
-        } catch (Exception var4)
-        {
-            error(var4);
+        } catch (Exception err) {
+            Utilities.error(err);
         }
-
         return newModel;
     }
 
-    public static JMenu makeMenu(String name, String[] items, ActionListener handler)
-    {
+    // simple menu maker
+    public static JMenu makeMenu (String name, String[] items, ActionListener handler) {
         JMenu result = new JMenu(name);
-
-        for (int i = 0; i < items.length; ++i)
-        {
+        for (int i = 0; i < items.length; i++) {
             JMenuItem item = new JMenuItem(items[i]);
             item.addActionListener(handler);
             result.add(item);
         }
-
         return result;
     }
 
-    public static void log(String msg)
-    {
-        System.out.println(msg);
+    public static void log (String msg) {
+        System.out.println(msg); // for now
     }
 
-    public static int getID()
-    {
+    public static int getID () {
         return nextID++;
     }
+
 }

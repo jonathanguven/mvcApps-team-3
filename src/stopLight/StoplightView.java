@@ -4,16 +4,13 @@ import mvc.View;
 
 import java.awt.*;
 
-public class StoplightView extends View
-{
+public class StoplightView extends View {
 
-    public StoplightView(Stoplight light)
-    {
+    public StoplightView (Stoplight light) {
         super(light);
     }
 
-    public void paintComponent(Graphics gc)
-    {
+    public void paintComponent (Graphics gc) {
         super.paintComponent(gc);
         Color oldColor = gc.getColor();
         Stoplight light = (Stoplight) model;

@@ -1,29 +1,20 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package mvc;
 
 import javax.swing.*;
 
-public class View extends JPanel implements Subscriber
-{
+public class View extends JPanel implements Subscriber {
     public Model model;
 
-    public View(Model newModel)
-    {
+    public View (Model newModel) {
         this.model = newModel;
         this.model.subscribe(this);
     }
 
-    public void update()
-    {
+    public void update () {
         this.repaint();
     }
 
-    public void setModel(Model newModel)
-    {
+    public void setModel (Model newModel) {
         this.model.unsubscribe(this);
         this.model = newModel;
         this.model.subscribe(this);
