@@ -14,9 +14,9 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
     private AppFactory factory;
     private JFrame frame;
 
-    public AppPanel (AppFactory newFactory) {
+    public AppPanel(AppFactory newFactory) {
         this.factory = newFactory;
-        controls = new ControlPanel();
+        controls = new JPanel();
         model = factory.makeModel();
         view = factory.makeView(model);
         setLayout(new GridLayout(1, 3));
@@ -32,7 +32,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
         frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
     }
 
-    protected JMenuBar createMenuBar () {
+    protected JMenuBar createMenuBar() {
         JMenuBar result = new JMenuBar();
         JMenu fileMenu = Utilities.makeMenu("File", new String[]{"New", "Save", "SaveAs", "Open", "Quit"}, this);
         result.add(fileMenu);
@@ -43,7 +43,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
         return result;
     }
 
-    public void actionPerformed (ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         String cmd = e.getActionCommand();
 
         try {
@@ -85,28 +85,19 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
 
     }
 
-    public void display () {
+    public void display() {
         frame.setVisible(true);
     }
 
-    public void update () {
+    public void update() {
 
     }
 
-    public void setModel (Model newModel) {
+    public void setModel(Model newModel) {
         this.model.unsubscribe(this);
         this.model = newModel;
         this.model.subscribe(this);
         view.setModel(this.model);
         model.changed();
-    }
-
-    public class ControlPanel extends JPanel {
-        public JPanel buttons;
-
-        public ControlPanel () {
-            this.setBackground(Color.PINK);
-            this.buttons = new JPanel();
-        }
     }
 }
