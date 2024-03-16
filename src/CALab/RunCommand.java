@@ -3,20 +3,17 @@ package CALab;
 import mvc.Command;
 import mvc.Model;
 
-public class RunCommand extends Command
-{
-    public RunCommand(Model m)
-    {
+public class RunCommand extends Command {
+    private int cycles;
+
+    public RunCommand(Model m, int cycles) {
         super(m);
+        this.cycles = cycles;
     }
 
     @Override
-    public void execute()
-    {
+    public void execute() {
         Grid grid = (Grid) model;
-        // if run1
-        grid.updateLoop(1);
-        // if run 50
-        grid.updateLoop(50);
+        grid.updateLoop(cycles);
     }
 }
