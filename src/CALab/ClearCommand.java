@@ -4,13 +4,16 @@ import mvc.Command;
 import mvc.Model;
 
 public class ClearCommand extends Command {
-    public ClearCommand (Model m) {
+    private final boolean random;
+
+    public ClearCommand(Model m, boolean random) {
         super(m);
+        this.random = random;
     }
 
     @Override
-    public void execute () {
+    public void execute() {
         Grid grid = (Grid) model;
-        grid.repopulate(false);
+        grid.repopulate(random);
     }
 }
