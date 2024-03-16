@@ -4,13 +4,16 @@ import mvc.Command;
 import mvc.Model;
 
 public class PopulateCommand extends Command {
-    public PopulateCommand (Model m) {
+    private boolean random;
+
+    public PopulateCommand(Model m, boolean random) {
         super(m);
+        this.random = random;
     }
 
     @Override
-    public void execute () {
+    public void execute() {
         Grid grid = (Grid) model;
-        grid.populate();
+        grid.repopulate(random);
     }
 }
