@@ -25,6 +25,23 @@ abstract class Cell extends Publisher implements Serializable {
 			Starting at a random position in the array search for a neighbor without a partner
 			Make the first such neighbor (if any) the partner and set its partner field to this
 			*/
+            Cell[] neighbors = new Cell[8];
+            int i = 0;
+            for (Cell c : neighbors) {
+                neighbors[i] = c;
+                i++;
+            }
+
+            int rand = (int) (Math.random() * 8);
+            for (int j = 0; j < 8; j++) {
+                Cell neighbor = neighbors[rand % 8];
+                if (neighbor != null && neighbor.partner == null) {
+                    partner = neighbor;
+                    neighbor.partner = this;
+                    break;
+                }
+                rand++;
+            }
         }
 
     }
@@ -58,8 +75,7 @@ abstract class Cell extends Publisher implements Serializable {
     public Color getColor() {
         if (color == 0) {
             return Color.RED;
-        }
-        else {
+        } else {
             return Color.GREEN;
         }
     }
