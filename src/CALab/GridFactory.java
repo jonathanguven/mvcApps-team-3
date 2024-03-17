@@ -15,11 +15,6 @@ public abstract class GridFactory implements AppFactory {
     public abstract View makeView(Model m);
 
     @Override
-    public abstract String getTitle();
-
-    @Override
-    public abstract String about();
-
     public String[] getEditCommands() {
         return new String[]{"Run1", "Run50", "Populate", "Clear"};
     }
@@ -34,13 +29,23 @@ public abstract class GridFactory implements AppFactory {
             case "Populate":
                 return new PopulateCommand(model, r.nextBoolean());
             case "Clear":
-                return new ClearCommand(model, r.nextBoolean());
+                return new ClearCommand(model);
         }
         return null;
+    }
+
+    @Override
+    public String getTitle() {
+        return "Cellular Automata Lab";
     }
 
     public String[] getHelp() {
         return new String[]{"Run1: Runs the model one time\n", "Run50: Runs the model fifty times\n",
                 "Populate: Populates the model\n", "Clear: Clears the model\n"};
+    }
+
+    @Override
+    public String about() {
+        return "Cellular Automata Lab Version 1.0. Created by Jonathan Nguyen and Gabriel Danekari";
     }
 }
