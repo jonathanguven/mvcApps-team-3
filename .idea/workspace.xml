@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="Completed implementation for GridPanel and GridView">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/ClearCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/ClearCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/GridFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridFactory.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="implement choosePartner in Cell.java" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +117,7 @@
       <updated>1709784637482</updated>
       <workItem from="1709784638626" duration="1679000" />
       <workItem from="1709878044636" duration="1239000" />
-      <workItem from="1710664438625" duration="199000" />
+      <workItem from="1710664438625" duration="561000" />
     </task>
     <task id="LOCAL-00001" summary="added StopLightSim 2.0 files to stoplight package">
       <option name="closed" value="true" />
@@ -180,7 +175,31 @@
       <option name="project" value="LOCAL" />
       <updated>1710543528340</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="remove random field from ClearCommand">
+      <option name="closed" value="true" />
+      <created>1710664801084</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710664801084</updated>
+    </task>
+    <task id="LOCAL-00009" summary="implement get title and about for GridFactory">
+      <option name="closed" value="true" />
+      <created>1710664821282</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710664821282</updated>
+    </task>
+    <task id="LOCAL-00010" summary="implement choosePartner in Cell.java">
+      <option name="closed" value="true" />
+      <created>1710665007750</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710665007750</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,7 +222,10 @@
     <MESSAGE value="." />
     <MESSAGE value="completed implementation of Grid" />
     <MESSAGE value="Completed implementation for GridPanel and GridView" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed implementation for GridPanel and GridView" />
+    <MESSAGE value="remove random field from ClearCommand" />
+    <MESSAGE value="implement get title and about for GridFactory" />
+    <MESSAGE value="implement choosePartner in Cell.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement choosePartner in Cell.java" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
