@@ -43,12 +43,12 @@ public abstract class Grid extends Model {
                 cells[row][col] = makeCell();
             }
         }
-        changed();
         for (int row = 0; row < dim; row++) {
             for (int col = 0; col < dim; col++) {
                 cells[row][col].neighbors = getNeighbors(cells[row][col], 1);
             }
         }
+        repopulate(true);
     }
 
     // called when Populate button is clicked
@@ -97,6 +97,7 @@ public abstract class Grid extends Model {
         // call each cell's observe method and notify subscribers
         for (int row = 0; row < dim; row++) {
             for (int col = 0; col < dim; col++) {
+                cells[row][col].neighbors = getNeighbors(cells[row][col], 1);
                 cells[row][col].observe();
             }
         }
