@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="click cell implemented.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/CellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/CellView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Life/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Life/Agent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "jonathan-CA-lab",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hienc/Desktop/Main/SJSU/CS_151 - Object-Oriented Design/CA Lab/mvcApps-team-3",
@@ -262,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710742063049</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="society cell now displays ambience">
+      <option name="closed" value="true" />
+      <created>1710802826008</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710802826008</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +298,8 @@
     <MESSAGE value="remove random field of PopulateCommand" />
     <MESSAGE value="implement action performed in cell view" />
     <MESSAGE value="click cell implemented." />
-    <option name="LAST_COMMIT_MESSAGE" value="click cell implemented." />
+    <MESSAGE value="society cell now displays ambience" />
+    <option name="LAST_COMMIT_MESSAGE" value="society cell now displays ambience" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
