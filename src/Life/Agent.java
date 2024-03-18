@@ -19,14 +19,15 @@ public class Agent extends Cell {
     @Override
     public void update() {
         nextState();
+        notifySubscribers();
     }
 
     @Override
     public void nextState() {
-        if (status == 0) {
+        if (status == 0 && ambience == 3) {
             status = 1;
         }
-        else {
+        else if (status == 1 && (ambience <= 1 || ambience >= 4)) {
             status = 0;
         }
     }
