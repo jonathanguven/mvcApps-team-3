@@ -29,10 +29,4 @@ public class GridPanel extends AppPanel {
         controls.add(clear);
         controls.add(populate);
     }
-
-    public static void main(String[] args) {
-        AppFactory factory = new StoplightFactory();
-        AppPanel panel = new StoplightPanel(factory);
-        panel.display();
-    }
 }
