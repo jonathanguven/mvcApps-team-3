@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="implement choosePartner in Cell.java">
-      <change afterPath="$PROJECT_DIR$/src/Life/Agent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Life/LifeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Life/LifePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Life/Society.java" afterDir="false" />
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="Made Life package and files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Life/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Life/Agent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.LifePanel.executor": "Run",
     "Application.StoplightPanel.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -234,7 +231,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710665007750</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Made Life package and files">
+      <option name="closed" value="true" />
+      <created>1710733075837</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710733075837</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Made Life package and files">
+      <option name="closed" value="true" />
+      <created>1710733085673</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710733085673</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +273,8 @@
     <MESSAGE value="remove random field from ClearCommand" />
     <MESSAGE value="implement get title and about for GridFactory" />
     <MESSAGE value="implement choosePartner in Cell.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement choosePartner in Cell.java" />
+    <MESSAGE value="Made Life package and files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made Life package and files" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
