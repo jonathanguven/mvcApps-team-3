@@ -76,7 +76,7 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
                     System.exit(0);
                     break;
                 default:
-                    Command c = this.factory.makeEditCommand(this.model, cmd, e.getSource());
+                    Command c = factory.makeEditCommand(this.model, cmd, this);
                     c.execute();
             }
         } catch (Exception error) {
