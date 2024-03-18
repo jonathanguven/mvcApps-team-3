@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="remove random field of PopulateCommand">
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="implement action performed in cell view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/CellView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/CellView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/GridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/PopulateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/PopulateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mvc/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/Command.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710737545682</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="implement action performed in cell view">
+      <option name="closed" value="true" />
+      <created>1710740017108</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710740017108</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +276,8 @@
     <MESSAGE value="implement get title and about for GridFactory" />
     <MESSAGE value="implement choosePartner in Cell.java" />
     <MESSAGE value="remove random field of PopulateCommand" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove random field of PopulateCommand" />
+    <MESSAGE value="implement action performed in cell view" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement action performed in cell view" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

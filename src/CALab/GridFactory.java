@@ -27,7 +27,7 @@ public abstract class GridFactory implements AppFactory {
             case "Run50":
                 return new RunCommand(model, 50);
             case "Populate":
-                return new PopulateCommand(model, r.nextBoolean());
+                return new PopulateCommand(model);
             case "Clear":
                 return new ClearCommand(model);
         }
