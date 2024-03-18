@@ -12,7 +12,6 @@ public class GridView extends View {
         super(model);
         Grid grid = (Grid) model;
         int size = grid.getDim();
-        cellViews = new CellView[size][size];
 
         this.setLayout((new GridLayout(size, size)));
         for (int i = 0; i < size; i++) {
@@ -27,8 +26,8 @@ public class GridView extends View {
     }
 
     public void update() {
-        for (int i = 0; i < cellViews.length - 1; i++) {
-            for (int x = 0; x < cellViews[0].length - 1; x++) {
+        for (int i = 0; i < cellViews.length; i++) {
+            for (int x = 0; x < cellViews[0].length; i++) {
                 cellViews[i][x].update();
             }
         }
