@@ -15,4 +15,9 @@ public class LifeFactory extends GridFactory {
     public View makeView(Model m) {
         return new GridView((Society) m);
     }
+
+    @Override
+    public String about() {
+        return "Life Version 1.0. Created by Jonathan Nguyen and Gabriel Danekari";
+    }
 }

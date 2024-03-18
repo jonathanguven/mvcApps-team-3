@@ -45,7 +45,5 @@ public abstract class GridFactory implements AppFactory {
     }
 
     @Override
-    public String about() {
-        return "Cellular Automata Lab Version 1.0. Created by Jonathan Nguyen and Gabriel Danekari";
-    }
+    public abstract String about();
 }

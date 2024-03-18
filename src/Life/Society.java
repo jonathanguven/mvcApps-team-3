@@ -22,7 +22,7 @@ public class Society extends Grid {
     }
 
     @Override
-    public Agent makeCell(boolean uniform) {
+    public Agent makeCell() {
         return new Agent();
     }
 }

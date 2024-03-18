@@ -10,7 +10,12 @@ public class Agent extends Cell {
 
     @Override
     public void observe() {
-        ambience = this.neighbors.size();
+        ambience = 0;
+        for (Cell a : neighbors) {
+            if (a.getStatus() == 1) {
+                ambience++;
+            }
+        }
     }
 
     @Override
@@ -43,7 +48,7 @@ public class Agent extends Cell {
 
     @Override
     public int getStatus() {
-        return status;
+        return ambience;
     }
 
     @Override

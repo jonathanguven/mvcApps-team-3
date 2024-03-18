@@ -28,6 +28,11 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -281,6 +286,7 @@
     <MESSAGE value="Completed implementation for GridPanel and GridView" />
     <MESSAGE value="remove random field from ClearCommand" />
     <MESSAGE value="implement get title and about for GridFactory" />
+    <MESSAGE value="Fixed" />
     <MESSAGE value="implement choosePartner in Cell.java" />
     <MESSAGE value="remove random field of PopulateCommand" />
     <MESSAGE value="implement action performed in cell view" />
