@@ -55,7 +55,13 @@ public abstract class Grid extends Model {
     public void repopulate(boolean randomly) {
         for (int row = 0; row < dim; row++) {
             for (int col = 0; col < dim; col++) {
-                cells[row][col].reset(randomly);
+                if (randomly) {
+                    // randomly set the status of each cell
+                    cells[row][col].reset(true);
+                } else {
+                    // set the status of each cell to 0 (dead)
+                    cells[row][col].reset(false);
+                }
             }
         }
 
