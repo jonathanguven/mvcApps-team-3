@@ -48,7 +48,7 @@ public class Agent extends Cell {
 
     @Override
     public int getStatus() {
-        return ambience;
+        return status;
     }
 
     @Override
