@@ -59,4 +59,9 @@ public class Agent extends Cell {
             return Color.GREEN;
         }
     }
+    
+    @Override
+    public int getAmbience() {
+        return ambience;
+    }
 }
