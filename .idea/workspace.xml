@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="implement choosePartner in Cell.java" />
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="implement choosePartner in Cell.java">
+      <change afterPath="$PROJECT_DIR$/src/Life/Agent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Life/LifeFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Life/LifePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Life/Society.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Cell.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +32,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "minusAce"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="30595a4d-777d-49e3-b1cc-7b4606609843" />
+        <option name="url" value="https://github.com/jonathanguven/mvcApps-team-3.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="qtxnf7oe" />
@@ -56,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "jonathan-CA-Lab",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hienc/Desktop/Main/SJSU/CS_151 - Object-Oriented Design/CA Lab/mvcApps-team-3",
@@ -77,7 +98,20 @@
       <recent name="C:\Users\Jonathan\IdeaProjects\mvcApps\src\stopLight" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.LifePanel">
+    <configuration name="LifePanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Life.LifePanel" />
+      <module name="CS151Project3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Life.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="StoplightPanel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="corretto-11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -95,6 +129,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LifePanel" />
         <item itemvalue="Application.StoplightPanel" />
       </list>
     </recent_temporary>
@@ -103,7 +138,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-868cef46" />
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
       </set>
     </attachedChunks>
   </component>
