@@ -2,7 +2,6 @@ package CALab;
 
 import mvc.Model;
 
-import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -33,14 +32,14 @@ public abstract class Grid extends Model {
         return cells[row][col];
     }
 
-    public abstract Cell makeCell();
+    public abstract Cell makeCell(boolean uniform);
 
     protected void populate() {
         // 1. use makeCell to fill in cells
         // 2. use getNeighbors to set the neighbors field of each cell
         for (int row = 0; row < dim; row++) {
             for (int col = 0; col < dim; col++) {
-                cells[row][col] = makeCell();
+                cells[row][col] = makeCell(true);
             }
         }
         for (int row = 0; row < dim; row++) {
@@ -78,23 +77,18 @@ public abstract class Grid extends Model {
         The asker is not a neighbor of itself.
         */
         Set<Cell> reachable = new HashSet<>();
-        for (int row = Math.max(0, asker.row - radius); row <= Math.min(dim - 1, asker.row + radius); row++) {
-            for (int col = Math.max(0, asker.col - radius); col <= Math.min(dim - 1, asker.col + radius); col++) {
-                if (Math.abs(row - asker.row) + Math.abs(col - asker.col) <= radius) {
-                    reachable.add(cells[row][col]);
+        int row = asker.getRow();
+        int col = asker.getCol();
+
+        for (int i = row - radius; i <= row + radius; i++) {
+            for (int j = col - radius; j <= col + radius; j++) {
+                if (i >= 0 && i < dim && j >= 0 && j < dim && !(i == row && j == col)) {
+                    reachable.add(cells[i][j]);
+
                 }
             }
         }
         return reachable;
-    }
-
-    // overide these
-    public int getStatus() {
-        return 0;
-    }
-
-    public Color getColor() {
-        return Color.GREEN;
     }
 
     // cell phases:
