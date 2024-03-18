@@ -7,13 +7,12 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-abstract class Cell extends Publisher implements Serializable {
+public abstract class Cell extends Publisher implements Serializable {
 
     protected int row = 0, col = 0;
     protected Set<Cell> neighbors = new HashSet<>();
     protected Grid myGrid = null;
     protected Cell partner = null;
-    protected int color;
 
 
     // choose a random neighbor as a partner
@@ -72,11 +71,5 @@ abstract class Cell extends Publisher implements Serializable {
 
     public abstract int getStatus();
 
-    public Color getColor() {
-        if (color == 0) {
-            return Color.RED;
-        } else {
-            return Color.GREEN;
-        }
-    }
+    public abstract Color getColor();
 }
