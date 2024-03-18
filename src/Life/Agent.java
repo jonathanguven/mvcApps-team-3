@@ -51,11 +51,17 @@ public class Agent extends Cell {
         } else {
             status = 0;
         }
+        observe();
     }
 
     @Override
     public int getStatus() {
         return status;
+    }
+
+    @Override
+    public int getAmbience() {
+        return ambience;
     }
 
 
@@ -67,9 +73,5 @@ public class Agent extends Cell {
             return Color.GREEN;
         }
     }
-    
-    @Override
-    public int getAmbience() {
-        return ambience;
-    }
+
 }
