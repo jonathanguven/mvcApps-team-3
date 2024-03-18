@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 
 
 public class CellView extends JButton implements ActionListener, Subscriber {
-    private final Cell myCell;
+    private final Cell cell;
 
     public CellView(Cell c) {
-        myCell = c;
+        cell = c;
         if (c != null) {
             c.subscribe(this);
         }
@@ -25,15 +25,15 @@ public class CellView extends JButton implements ActionListener, Subscriber {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        myCell.nextState();
+        cell.nextState();
         // call update needed?
     }
 
     // called by notifySubscribers and GridView.update
     @Override
     public void update() {
-        setBackground(myCell.getColor());
+        setBackground(cell.getColor());
         setBorder(BorderFactory.createLineBorder(Color.black)); // needed?
-        setText("" + myCell.getStatus());
+        setText("" + cell.getStatus());
     }
 }
