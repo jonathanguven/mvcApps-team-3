@@ -83,9 +83,11 @@ public abstract class Grid extends Model {
 
         for (int i = row - radius; i <= row + radius; i++) {
             for (int j = col - radius; j <= col + radius; j++) {
-                if (i >= 0 && i < dim && j >= 0 && j < dim && !(i == row && j == col)) {
-                    reachable.add(cells[i][j]);
+                int wrappedRow = (i + dim) % dim;
+                int wrappedCol = (j + dim) % dim;
 
+                if (!(i == row && j == col)) {
+                    reachable.add(cells[wrappedRow][wrappedCol]);
                 }
             }
         }
