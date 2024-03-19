@@ -96,8 +96,8 @@ public class AppPanel extends JPanel implements Subscriber, ActionListener {
     public void setModel(Model newModel) {
         this.model.unsubscribe(this);
         this.model = newModel;
-        this.model.subscribe(this);
         view.setModel(this.model);
+        model.subscribe(this);
         model.changed();
     }
 }
