@@ -48,7 +48,6 @@ public class Agent extends Cell {
     public void reset(boolean randomly) {
         if (randomly) {
             status = (int) (Math.random() * 2);
-            observe();
         } else {
             status = 0;
             ambience = 0;

@@ -1,5 +1,4 @@
 package CALab;
-//sup
 
 import mvc.Model;
 
@@ -64,6 +63,7 @@ public abstract class Grid extends Model {
                 }
             }
         }
+        // comment out if populate changes the ambience of cells
         // observe();
         // notify subscribers
         changed();
@@ -83,11 +83,9 @@ public abstract class Grid extends Model {
 
         for (int i = row - radius; i <= row + radius; i++) {
             for (int j = col - radius; j <= col + radius; j++) {
-                int wrappedRow = (i + dim) % dim;
-                int wrappedCol = (j + dim) % dim;
+                if (i >= 0 && i < dim && j >= 0 && j < dim && !(i == row && j == col)) {
+                    reachable.add(cells[i][j]);
 
-                if (!(i == row && j == col)) {
-                    reachable.add(cells[wrappedRow][wrappedCol]);
                 }
             }
         }
