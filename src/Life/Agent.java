@@ -6,13 +6,13 @@ import java.awt.*;
 
 public class Agent extends Cell {
     public int status = 0;
-    public int ambience = 8;
+    public int ambience = 0;
 
     @Override
     public void observe() {
         ambience = 0;
         for (Cell a : neighbors) {
-            if (a.getStatus() == 1) {
+            if (((Agent) a).getStatus() == 1) {
                 ambience++;
             }
         }
@@ -24,15 +24,22 @@ public class Agent extends Cell {
 
     @Override
     public void update() {
-        nextState();
-        notifySubscribers();
+        if (status == 1) {
+            if (Society.death.contains(ambience)) {
+                status = 0;
+            }
+        } else {
+            if (Society.rebirth.contains(ambience)) {
+                status = 1;
+            }
+        }
     }
 
     @Override
     public void nextState() {
-        if (status == 0 && ambience == 3) {
+        if (status == 0 && Society.death.contains(status)) {
             status = 1;
-        } else if (status == 1 && (ambience <= 1 || ambience >= 4)) {
+        } else if (status == 1 && Society.death.contains(ambience)) {
             status = 0;
         }
     }
@@ -52,6 +59,12 @@ public class Agent extends Cell {
     }
 
     @Override
+    public int getAmbience() {
+        return ambience;
+    }
+
+
+    @Override
     public Color getColor() {
         if (getStatus() == 0) {
             return Color.RED;
@@ -59,9 +72,5 @@ public class Agent extends Cell {
             return Color.GREEN;
         }
     }
-    
-    @Override
-    public int getAmbience() {
-        return ambience;
-    }
+
 }

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_17_2024_23_44__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Cell.java" afterDir="false" />
-    </list>
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="simplify logic for nextState" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Gabriel-Branch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +70,6 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.LifePanel.executor&quot;: &quot;Run&quot;,
     &quot;Application.StoplightPanel.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -132,11 +127,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StoplightPanel" />
         <item itemvalue="Application.LifePanel" />
         <item itemvalue="Application.StoplightPanel" />
-        <item itemvalue="Application.LifePanel" />
-        <item itemvalue="Application.LifePanel" />
       </list>
     </recent_temporary>
   </component>
@@ -265,39 +257,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710742063049</updated>
     </task>
-    <task id="LOCAL-00014" summary=".">
+    <task id="LOCAL-00014" summary="society cell now displays ambience">
       <option name="closed" value="true" />
-      <created>1710742728282</created>
+      <created>1710802826008</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1710742728282</updated>
+      <updated>1710802826008</updated>
     </task>
-    <task id="LOCAL-00015" summary=".">
+    <task id="LOCAL-00015" summary="simplify logic for nextState">
       <option name="closed" value="true" />
-      <created>1710743474051</created>
+      <created>1710806456448</created>
       <option name="number" value="00015" />
       <option name="presentableId" value="LOCAL-00015" />
       <option name="project" value="LOCAL" />
-      <updated>1710743474051</updated>
+      <updated>1710806456448</updated>
     </task>
-    <task id="LOCAL-00016" summary=".">
-      <option name="closed" value="true" />
-      <created>1710744590487</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1710744590487</updated>
-    </task>
-    <task id="LOCAL-00017" summary=".">
-      <option name="closed" value="true" />
-      <created>1710744607489</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1710744607489</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,16 +293,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added StopLightSim 2.0 files to stoplight package" />
     <MESSAGE value="Changed AppPanel to use more of the Utilities class" />
+    <MESSAGE value="." />
     <MESSAGE value="completed implementation of Grid" />
     <MESSAGE value="Completed implementation for GridPanel and GridView" />
     <MESSAGE value="remove random field from ClearCommand" />
     <MESSAGE value="implement get title and about for GridFactory" />
+    <MESSAGE value="Fixed" />
     <MESSAGE value="implement choosePartner in Cell.java" />
     <MESSAGE value="remove random field of PopulateCommand" />
     <MESSAGE value="implement action performed in cell view" />
     <MESSAGE value="click cell implemented." />
-    <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="society cell now displays ambience" />
+    <MESSAGE value="simplify logic for nextState" />
+    <option name="LAST_COMMIT_MESSAGE" value="simplify logic for nextState" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
