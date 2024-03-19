@@ -24,22 +24,16 @@ public class Agent extends Cell {
 
     @Override
     public void update() {
-        if (status == 1) {
-            if (Society.death.contains(ambience)) {
-                status = 0;
-            }
-        } else {
-            if (Society.rebirth.contains(ambience)) {
-                status = 1;
-            }
-        }
+        nextState();
+        notifySubscribers();
     }
 
     @Override
     public void nextState() {
-        if (status == 0 && Society.death.contains(status)) {
+        if (status == 0 && ambience == 3) {
             status = 1;
-        } else if (status == 1 && Society.death.contains(ambience)) {
+        }
+        else if (status == 1 && (ambience <= 1 || ambience >= 4)) {
             status = 0;
         }
     }
@@ -48,7 +42,8 @@ public class Agent extends Cell {
     public void reset(boolean randomly) {
         if (randomly) {
             status = (int) (Math.random() * 2);
-        } else {
+        }
+        else {
             status = 0;
         }
     }
@@ -59,16 +54,21 @@ public class Agent extends Cell {
     }
 
     @Override
+    public void setStatus(int i) {
+        status = i;
+    }
+
+    @Override
     public int getAmbience() {
         return ambience;
     }
-
 
     @Override
     public Color getColor() {
         if (getStatus() == 0) {
             return Color.RED;
-        } else {
+        }
+        else {
             return Color.GREEN;
         }
     }

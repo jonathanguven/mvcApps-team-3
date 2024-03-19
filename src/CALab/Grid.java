@@ -57,13 +57,14 @@ public abstract class Grid extends Model {
                 if (randomly) {
                     // randomly set the status of each cell
                     cells[row][col].reset(true);
-                } else {
+                }
+                else {
                     // set the status of each cell to 0 (dead)
                     cells[row][col].reset(false);
                 }
             }
         }
-
+        observe();
         // notify subscribers
         changed();
     }
