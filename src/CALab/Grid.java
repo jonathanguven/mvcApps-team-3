@@ -1,5 +1,5 @@
 package CALab;
-// test comment
+//sup
 
 import mvc.Model;
 
@@ -65,7 +65,7 @@ public abstract class Grid extends Model {
                 }
             }
         }
-
+        observe();
         // notify subscribers
         changed();
     }
