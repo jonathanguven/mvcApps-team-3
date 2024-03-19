@@ -37,9 +37,9 @@ public class Agent extends Cell {
 
     @Override
     public void nextState() {
-        if (status == 0 && ((ambience > 1 && ambience < 4) || ambience == 0)) {
+        if (status == 0 && Society.death.contains(status)) {
             status = 1;
-        } else if (status == 1 && (ambience <= 1 || ambience >= 4)) {
+        } else if (status == 1 && Society.death.contains(ambience)) {
             status = 0;
         }
     }
