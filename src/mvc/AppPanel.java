@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AppPanel extends JPanel implements Subscriber, ActionListener {
-    public static int FRAME_WIDTH = 500;
-    public static int FRAME_HEIGHT = 300;
+    public static int FRAME_WIDTH = 830;
+    public static int FRAME_HEIGHT = 500;
     private final View view;
     public JPanel controls;
     private Model model;
