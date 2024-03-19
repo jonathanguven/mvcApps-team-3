@@ -58,7 +58,8 @@ public abstract class Grid extends Model {
                 if (randomly) {
                     // randomly set the status of each cell
                     cells[row][col].reset(true);
-                } else {
+                }
+                else {
                     // set the status of each cell to 0 (dead)
                     cells[row][col].reset(false);
                 }
@@ -83,9 +84,11 @@ public abstract class Grid extends Model {
 
         for (int i = row - radius; i <= row + radius; i++) {
             for (int j = col - radius; j <= col + radius; j++) {
-                if (i >= 0 && i < dim && j >= 0 && j < dim && !(i == row && j == col)) {
-                    reachable.add(cells[i][j]);
+                int wrappedRow = (i + dim) % dim;
+                int wrappedCol = (j + dim) % dim;
 
+                if (!(i == row && j == col)) {
+                    reachable.add(cells[wrappedRow][wrappedCol]);
                 }
             }
         }
