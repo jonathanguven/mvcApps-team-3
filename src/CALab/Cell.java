@@ -78,8 +78,6 @@ public abstract class Cell extends Publisher implements Serializable {
 
     public abstract int getStatus();
 
-    public abstract void setStatus(int i);
-
     public abstract int getAmbience();
 
     public abstract Color getColor();
