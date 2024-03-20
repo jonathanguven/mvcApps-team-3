@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="FINAL REFACTOR: fix grid wrapping">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CALab/GridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mvc/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

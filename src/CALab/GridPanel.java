@@ -4,11 +4,13 @@ import mvc.AppFactory;
 import mvc.AppPanel;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class GridPanel extends AppPanel {
 
     public GridPanel(AppFactory factory) {
         super(factory);
+        controls.setLayout((new GridLayout(2, 2)));
 
         JButton run1 = new JButton("Run1");
         run1.addActionListener(this);
