@@ -10,14 +10,14 @@ public abstract class Grid extends Model {
     protected int dim = 20;
     protected Cell[][] cells;
 
-    public Grid(int dim) {
+    public Grid(int dim, boolean random) {
         this.dim = dim;
         cells = new Cell[dim][dim];
-        populate();
+        populate(random);
     }
 
     public Grid() {
-        this(20);
+        this(20, false);
     }
 
     public int getDim() {
@@ -34,7 +34,7 @@ public abstract class Grid extends Model {
 
     public abstract Cell makeCell(boolean uniform);
 
-    protected void populate() {
+    protected void populate(boolean randomly) {
         // 1. use makeCell to fill in cells
         // 2. use getNeighbors to set the neighbors field of each cell
         for (int row = 0; row < dim; row++) {
@@ -47,7 +47,8 @@ public abstract class Grid extends Model {
                 cells[row][col].neighbors = getNeighbors(cells[row][col], 1);
             }
         }
-        repopulate(true);
+
+        repopulate(randomly);
     }
 
     // called when Populate button is clicked

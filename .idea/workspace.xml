@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="FINAL REFACTOR: fix grid wrapping">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CALab/GridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/GridPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mvc/AppPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mvc/AppPanel.java" afterDir="false" />
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="set 2 by 2 grid for buttons">
+      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710822407485</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="set 2 by 2 grid for buttons">
+      <option name="closed" value="true" />
+      <created>1710973473975</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1710973473975</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,7 +348,8 @@
     <MESSAGE value="made appPanel bigger" />
     <MESSAGE value="FINAL REFACTOR: random bug fixes" />
     <MESSAGE value="FINAL REFACTOR: fix grid wrapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINAL REFACTOR: fix grid wrapping" />
+    <MESSAGE value="set 2 by 2 grid for buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="set 2 by 2 grid for buttons" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
