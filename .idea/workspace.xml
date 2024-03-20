@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="set 2 by 2 grid for buttons">
-      <change beforePath="$PROJECT_DIR$/src/CALab/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CALab/Grid.java" afterDir="false" />
+    <list default="true" id="0e967906-464c-4bbd-9376-7460ffb17529" name="Changes" comment="FIX: executing 'new' no longer randomly populates grid, instead sets it all to 0.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -313,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710973473975</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="FIX: executing 'new' no longer randomly populates grid, instead sets it all to 0.">
+      <option name="closed" value="true" />
+      <created>1710973871518</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1710973871518</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +357,8 @@
     <MESSAGE value="FINAL REFACTOR: random bug fixes" />
     <MESSAGE value="FINAL REFACTOR: fix grid wrapping" />
     <MESSAGE value="set 2 by 2 grid for buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="set 2 by 2 grid for buttons" />
+    <MESSAGE value="FIX: executing 'new' no longer randomly populates grid, instead sets it all to 0." />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: executing 'new' no longer randomly populates grid, instead sets it all to 0." />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
